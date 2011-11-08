@@ -1,0 +1,18 @@
+#### screenrc
+
+## Look and feel.
+caption string "%?%F%{= Bk}%? %C%A %D %d-%m-%Y %{= kB} %t%= %?%F%{= Bk}%:%{= wk}%? %n "
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
+### Be emacs friendly.
+## do not trash BackSpace, usually DEL
+bindkey -k kb
+bindkey -d -k kb
+
+## do not trash Delete, usually ESC 
+bindkey -k kD
+bindkey -d -k kD
+
+# Ctrl-t works well as the command key.
+escape ^Tt
