@@ -31,3 +31,41 @@
 (setq gnus-summary-thread-gathering-function 
       'gnus-gather-threads-by-subject)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Get rid of he menubar
+;(menu-bar-mode nil)
+(tool-bar-mode nil)
+
+;; Load Quack for scheme 
+(load "/home/varoun/Apps/quack.el")
+;; Scheme48
+(setq load-path (append load-path '("~/Apps/scheme48-1.8/emacs")))
+(setq scheme-program-name "scheme48")
+(autoload 'run-scheme
+          "cmuscheme48"
+	  "Run an inferior Scheme process"
+	  t)
+
+;;; Speed up saves.
+(setq vc-handled-backends nil)
+
+;;; Set window size on startup.
+(if (window-system) (set-frame-size (selected-frame) 96 48))
+
+
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(quack-default-program "scheme48")
+ '(quack-fontify-style (quote emacs))
+ '(safe-local-variable-values (quote ((Syntax . COMMON-LISP) (Package . CL-USER) (Base . 10)))))
+
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+'(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+
